@@ -78,7 +78,7 @@ export class Flake {
     this.ys = (0.5 + Math.random()) * this.config.fall_speed;
     this.size = (0.5 + Math.random()) * this.config.size;
 
-    if (this.config.images) {
+    if (this.config.images && this.config.images.length) {
       const imgCount = this.config.images.length;
       const img = new Image();
       img.src = this.config.images[Math.floor(Math.random() * imgCount)];

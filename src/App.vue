@@ -134,6 +134,7 @@ export default Vue.extend({
 }
 .controll_item.full_width {
   flex-basis: 100%;
+  margin: 0;
 }
 
 .controll_label {
