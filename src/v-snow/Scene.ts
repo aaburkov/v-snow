@@ -5,7 +5,7 @@ import { _debounce } from "./utils";
 const defaultSceneConfig: SceneConfig = {
   color: "#FFFFFF",
   opacity: 1,
-  density: 100,
+  density: 50,
   fall_speed: 2,
   size: 10,
   zIndex: "999"

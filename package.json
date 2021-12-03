@@ -5,10 +5,10 @@
   "files": [
     "dist/v-snow.js",
     "dist/v-snow.min.js",
-    "dist/typings/v-snow"
+    "dist/types/v-snow"
   ],
-  "typings": "dist/typings",
-  "version": "1.0.1",
+  "typings": "dist/types/v-snow/index.d.ts",
+  "version": "1.0.33",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
   "repository": {
     "type": "git",

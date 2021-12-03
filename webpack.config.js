@@ -6,8 +6,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    "v-snow": "./src/v-snow/index.js",
-    "v-snow.min": "./src/v-snow/index.js",
+    "v-snow": "./src/v-snow/index.ts",
+    "v-snow.min": "./src/v-snow/index.ts",
     main: "./src/main.js"
   },
   output: {
