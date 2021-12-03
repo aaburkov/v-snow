@@ -20,8 +20,7 @@ function install(Vue, options) {
   if (install.installed) return;
   install.installed = true;
 
-  Vue.VSnowFunction = Scene;
-  Vue.myAddedMethod = Scene;
+  // Vue.VSnowFunction = Scene;
   Vue.directive("snow", directive);
   Vue.component("VueSnow", component);
 }

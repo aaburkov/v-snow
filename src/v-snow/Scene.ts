@@ -7,7 +7,8 @@ const defaultSceneConfig: SceneConfig = {
   opacity: 1,
   density: 100,
   fall_speed: 2,
-  size: 10
+  size: 10,
+  zIndex: "999"
 };
 
 export default class Scene {
@@ -26,6 +27,7 @@ export default class Scene {
     container: string | HTMLElement = "body",
     config?: Partial<SceneConfig>
   ) {
+    console.log(config);
     this.initContainer(container);
     this.config = { ...defaultSceneConfig, ...config };
     this.checkConfig(this.config);
@@ -146,9 +148,11 @@ export default class Scene {
     const canvas: HTMLCanvasElement = document.createElement("canvas");
 
     canvas.style.position = "absolute";
+    canvas.id = `v-snow_canvas_${new Date().getTime()}`;
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = this.config.zIndex || "999";
 
     canvas.width = this.container.clientWidth;
     canvas.height = this.container.clientHeight;

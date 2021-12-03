@@ -5,6 +5,7 @@ export interface SceneConfig {
   color: string;
   images?: string[];
   opacity: number;
+  zIndex?: string;
 }
 
 export enum FlakeEdgePosition {

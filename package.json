@@ -1,15 +1,23 @@
 {
-  "name": "v-snow",
-  "description": "Vue.js 2.0 directives",
-  "main": "dist/vue-directives.min.js",
+  "name": "vsnow",
+  "description": "Snowfall effect for Vue js",
+  "main": "dist/v-snow.min.js",
   "files": [
-    "dist/vue-directives.js",
-    "dist/vue-directives.min.js"
+    "dist/v-snow.js",
+    "dist/v-snow.min.js",
+    "dist/typings/v-snow"
   ],
-  "version": "1.0.0",
+  "typings": "dist/typings",
+  "version": "1.0.1",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gamazu/v-snow"
+  },
+  "bugs": {
+    "url": "https://github.com/gamazu/v-snow/issues"
+  },
   "license": "MIT",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "webpack"
@@ -28,6 +36,9 @@
     "css-loader": "^6.4.0",
     "file-loader": "^6.2.0",
     "node-sass": "^6.0.1",
+    "postcss": "^8.4.4",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.0.1",
     "sass-loader": "^12.3.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",

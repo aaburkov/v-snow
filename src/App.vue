@@ -13,6 +13,7 @@
       :color="snowOptions.color"
       :images="snowOptions.images"
       :opacity="snowOptions.opacity"
+      zIndex="-1"
     />
 
     <div class="controlls_wrapper">
@@ -103,7 +104,7 @@ export default Vue.extend({
   margin: 0;
 }
 .logo {
-  width: 200px;
+  width: 10rem;
   height: auto;
 }
 .github_corner {
@@ -156,7 +157,7 @@ export default Vue.extend({
   margin-bottom: 10px;
 }
 .snow {
-  z-index: 0 !important;
+  z-index: -1;
 }
 
 @media screen and (max-width: 510px) {

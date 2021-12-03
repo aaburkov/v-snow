@@ -22,7 +22,8 @@ export default Vue.extend({
     size: Number,
     color: String,
     opacity: Number,
-    images: Array as PropType<string[]>
+    images: Array as PropType<string[]>,
+    zIndex: String
   },
   data(): State {
     return {
@@ -36,7 +37,8 @@ export default Vue.extend({
       ...(this.size && { size: this.size }),
       ...(this.color && { color: this.color }),
       ...(this.opacity && { opacity: this.opacity }),
-      ...(this.images && { images: this.images })
+      ...(this.images && { images: this.images }),
+      ...(this.zIndex && { zIndex: this.zIndex })
     });
     this.scene.start();
   },
@@ -68,7 +70,6 @@ export default Vue.extend({
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999;
   pointer-events: none;
   height: 100%;
   width: 100%;

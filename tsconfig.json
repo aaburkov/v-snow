@@ -9,7 +9,9 @@
     "target": "es5",
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "declaration": true,
+    "declarationDir": "./dist/typings"
   },
   "include": ["./src/**/*"]
 }
