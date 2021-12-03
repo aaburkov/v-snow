@@ -21,13 +21,13 @@ export const directive = statefulDirective();
 const plugin: PluginObject<any> = {
   install(Vue) {
     Vue.directive("snow", directive);
-    Vue.component("VueSnow", component);
+    Vue.component("VSnow", component);
   }
 };
 
 // auto install
 if (typeof window !== "undefined" && window.Vue) {
-  plugin.install(window.Vue, {});
+  plugin.install(window.Vue);
   (window as any).vsnow = plugin;
 }
 

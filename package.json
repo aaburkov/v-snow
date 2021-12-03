@@ -10,6 +10,11 @@
   "typings": "dist/types/v-snow/index.d.ts",
   "version": "1.0.33",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
+  "keywords": [
+    "snow",
+    "snowfall",
+    "vue"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gamazu/v-snow"
