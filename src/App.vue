@@ -123,6 +123,7 @@ export default Vue.extend({
   right: 0;
 }
 .controlls_wrapper {
+  overflow: hidden;
   width: 90%;
   max-width: 700px;
   margin: 0 auto;

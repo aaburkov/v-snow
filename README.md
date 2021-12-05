@@ -4,12 +4,13 @@
 [![npm](https://img.shields.io/npm/v/vsnow?style=for-the-badge)](https://www.npmjs.com/package/vsnow)
 [![npm](https://img.shields.io/npm/dw/vsnow?style=for-the-badge)](https://www.npmjs.com/package/vsnow)
 
+![alt text](assets/img/vue.png)
+
 Snowfall effect plugin for Vue js
 
 ## 👀 Demo
 
-You can play with params on
-[DEMO PAGE](http://gamazu.github.io/v-snow)
+You can watch the demo and play with the parameters on **[DEMO PAGE](http://gamazu.github.io/v-snow)**
 
 ## 💾 Instalation
 
@@ -23,41 +24,114 @@ npm install -S vsnow
 
 ### ES2015 (Webpack/Rollup/Browserify/etc)
 
+> Global install
+
 ```javascript
 import Vue from "vue";
 import VSnow from "vsnow";
 
 //Full install
 Vue.use(VSnow);
+
 // Or as a directive-only
 import { VSnowDirective } from "vsnow";
-Vue.directive("v-snow", VSnowDirective);
+Vue.directive("snow", VSnowDirective);
+
 // Or only as a component
 import { VSnowContainer } from "vsnow";
 Vue.filter("VSnow", VSnowContainer);
 ```
 
+> Installation inside a component
+
+```javascript
+<template>
+  <div >
+    <!-- DIRECTIVE -->
+    <div v-snow>
+    </div>
+    <!-- OR -->
+    <VSnow>
+  </div>
+</template>
+<script>
+  import {VSnowDirective, VSnowContainer} from 'vsnow'
+
+  export default {
+    components: {
+      VSnow: VSnowContainer
+    },
+    directives:{
+      'snow' : VSnowDirective,
+    }
+  }
+</script>
+```
+
 ### UMD (Browser)
+
+> Plugin will be installed automatically.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vsnow/dist/vsnow.min.js"></script>
 ```
 
-Plugin will be installed automatically.
-
 ## 🚀 Usage
 
 ```html
-<!-- As a directive -->
-<div v-snow>
-  <!-- content -->
-</div>
+<template>
+  <!-- Directive -->
+  <div v-snow="snowOptions"></div>
 
-<!-- As a wrapper component -->
-<VSnow />
+  <!-- Component -->
+  <VSnow
+    containerClass="myClass"
+    :density="snowOptions.density"
+    :size="snowOptions.size"
+    :fall_speed="snowOptions.fall_speed"
+    :color="snowOptions.color"
+    :images="snowOptions.images"
+    :opacity="snowOptions.opacity"
+  />
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        snowOptions: {
+          density: 50,
+          fall_speed: 4,
+          size: 10,
+          color: "#FFFFFF",
+          opacity: 1,
+          images: images
+        }
+      };
+    }
+  };
+</script>
 ```
 
-`That's all 🤩`
+### `That's it 🤩`
 
 ## ⚙️ Configuration
+
+> All parameters are optional
+
+| Props          | Description                            | Type                 | Default |
+| -------------- | -------------------------------------- | -------------------- | ------- |
+| zIndex         | z-index of canvas                      | String               | '999'   |
+| dencity        | Count of flakes                        | Number from 0 to 100 | 50      |
+| fall_speed     | Snowflake falling speed                | Number from 1 to 5   | 2       |
+| size           | Size of snowflake                      | Number               | 10      |
+| color          | Color of snowflakes                    | String               | #FFFFFF |
+| images         | Array of images path`s | String[] | [] |
+| opacity        | Opacity of snowflakes                  | Number               | 1       |
+| containerClass | Class of component                     | String               | ''      |
+
+> **Notice**: DENSITY Calculated from the screen width using the formula - **(view_width/400) x density**
+
+## 👏 Contributing
+
+I've more than happy to see potential contributions, so don't hesitate. If you have any suggestions, ideas or problems feel free to add new issue, but first please make sure your question does not repeat previous ones.
