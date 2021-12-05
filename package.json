@@ -8,12 +8,14 @@
     "dist/types/v-snow"
   ],
   "typings": "dist/types/v-snow/index.d.ts",
-  "version": "1.0.33",
+  "version": "1.0.4",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
   "keywords": [
     "snow",
     "snowfall",
-    "vue"
+    "effect",
+    "vue",
+    "directive"
   ],
   "repository": {
     "type": "git",
@@ -24,8 +26,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "webpack"
+    "dev": "webpack-dev-server --open --hot --env development",
+    "build": "webpack --env production"
   },
   "browserslist": [
     "> 1%",

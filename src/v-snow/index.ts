@@ -15,7 +15,6 @@ const statefulDirective = () => {
     }
   };
 };
-
 export const directive = statefulDirective();
 
 const plugin: PluginObject<any> = {
@@ -34,6 +33,5 @@ if (typeof window !== "undefined" && window.Vue) {
 export {
   plugin as default,
   component as VSnowContainer,
-  directive as VSnowDirective,
-  Scene as VSnowFunction
+  directive as VSnowDirective
 };

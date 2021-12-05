@@ -5,7 +5,7 @@
       <img src="../assets/img/vue.png" class="logo" />
       <h1 class="head_title">❄️ V-SNOW ❄️</h1>
     </header>
-    <VueSnow
+    <VSnow
       containerClass="snow"
       :density="snowOptions.density"
       :size="snowOptions.size"
@@ -104,7 +104,7 @@ export default Vue.extend({
   margin: 0;
 }
 .logo {
-  width: 10rem;
+  width: 8rem;
   height: auto;
 }
 .github_corner {

@@ -68,11 +68,7 @@ export class Flake {
   }
   arrange() {
     this.x = Math.random() * this.canvas.width;
-    if (Math.random() < 0.05) {
-      this.y = (0.5 + Math.random()) * -150;
-    } else {
-      this.y = Math.random() * -this.canvas.height - 300;
-    }
+    this.y = Math.random() * -this.canvas.height;
 
     this.xs = 0.5 - Math.random();
     this.ys = (0.5 + Math.random()) * this.config.fall_speed;

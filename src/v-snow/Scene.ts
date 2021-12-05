@@ -27,7 +27,6 @@ export default class Scene {
     container: string | HTMLElement = "body",
     config?: Partial<SceneConfig>
   ) {
-    console.log(config);
     this.initContainer(container);
     this.config = { ...defaultSceneConfig, ...config };
     this.checkConfig(this.config);
@@ -99,10 +98,16 @@ export default class Scene {
   private generateFlakes(): void {
     // generate flakes
     this.flakes = [];
-    for (let i = 0; i < this.densityByWidth; i++) {
-      const flake = new Flake(this.canvas, this.config);
-      this.flakes.push(flake);
-    }
+    let iteration = 0;
+
+    const interval = setInterval(() => {
+      if (iteration === 3) clearInterval(interval);
+      for (let i = 0; i < this.densityByWidth / 3; i++) {
+        const flake = new Flake(this.canvas, this.config);
+        this.flakes.push(flake);
+      }
+      iteration++;
+    }, 1500);
   }
 
   start(): void {
@@ -146,17 +151,17 @@ export default class Scene {
 
   private createCanvas(): void {
     const canvas: HTMLCanvasElement = document.createElement("canvas");
-
     canvas.style.position = "absolute";
     canvas.id = `v-snow_canvas_${new Date().getTime()}`;
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.pointerEvents = "none";
     canvas.style.zIndex = this.config.zIndex || "999";
-
     canvas.width = this.container.clientWidth;
     canvas.height = this.container.clientHeight;
+
     this.canvas = canvas;
+    console.log(this.canvas.width);
     this.container.appendChild(canvas);
 
     const ctx = canvas.getContext("2d");
@@ -173,8 +178,8 @@ export default class Scene {
     this.RO = new ResizeObserver(
       _debounce((entries: ResizeObserverEntry[]) => {
         for (let entry of entries) {
-          this.canvas.width = entry.contentRect.width;
-          this.canvas.height = entry.contentRect.height;
+          this.canvas.width = entry.target.clientWidth;
+          this.canvas.height = entry.target.clientHeight;
         }
       }, 100)
     );
