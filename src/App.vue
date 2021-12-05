@@ -3,7 +3,11 @@
     <GithubCorner class="github_corner" />
     <header class="header">
       <img src="../assets/img/vue.png" class="logo" />
-      <h1 class="head_title">❄️ V-SNOW ❄️</h1>
+      <h1 class="head_title">
+        <span class="snowflake">❄️</span>
+        V-SNOW
+        <span class="snowflake">❄️</span>
+      </h1>
     </header>
     <VSnow
       containerClass="snow"
@@ -15,7 +19,7 @@
       :opacity="snowOptions.opacity"
       zIndex="-1"
     />
-
+    <Features />
     <div class="controlls_wrapper">
       <div class="controll_item">
         <span class="controll_label">SPEED</span>
@@ -56,21 +60,23 @@ import GithubCorner from "./components/GithubCorner.vue";
 import Btn from "./components/Button.vue";
 import SpinBox from "./components/SpinBox.vue";
 import ColorPicker from "./components/ColorPicker.vue";
+import Features from "./components/Features.vue";
 export default Vue.extend({
   name: "App",
   components: {
     GithubCorner,
     Btn,
     SpinBox,
-    ColorPicker
+    ColorPicker,
+    Features
   },
   data() {
     const images: string[] = [];
     return {
       imagesInputValue: "",
       snowOptions: {
-        density: 40,
-        fall_speed: 3,
+        density: 50,
+        fall_speed: 4,
         size: 10,
         color: "#FFFFFF",
         opacity: 1,
@@ -97,6 +103,10 @@ export default Vue.extend({
 }
 .header {
   margin-bottom: 20px;
+}
+.snowflake {
+  display: inline-block;
+  animation: rotate 6s infinite linear;
 }
 .head_title {
   font-family: "WinterHoliday";
@@ -157,7 +167,16 @@ export default Vue.extend({
   margin-bottom: 10px;
 }
 .snow {
-  z-index: -1;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 510px) {

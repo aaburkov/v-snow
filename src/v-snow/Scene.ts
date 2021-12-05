@@ -10,6 +10,7 @@ const defaultSceneConfig: SceneConfig = {
   size: 10,
   zIndex: "999"
 };
+const PIXEL_RATIO = 2;
 
 export default class Scene {
   private config: SceneConfig;
@@ -77,7 +78,7 @@ export default class Scene {
 
   private calcDensityByWidth() {
     const resultDensity = Math.round(
-      (this.canvas.width / 200) * this.config.density
+      (this.canvas.width / (200 * PIXEL_RATIO)) * this.config.density
     );
     this.densityByWidth = resultDensity;
   }
@@ -157,11 +158,12 @@ export default class Scene {
     canvas.style.left = "0";
     canvas.style.pointerEvents = "none";
     canvas.style.zIndex = this.config.zIndex || "999";
-    canvas.width = this.container.clientWidth;
-    canvas.height = this.container.clientHeight;
+    canvas.style.width = this.container.clientWidth + "px";
+    canvas.style.height = this.container.clientHeight + "px";
+    canvas.width = this.container.clientWidth * PIXEL_RATIO;
+    canvas.height = this.container.clientHeight * PIXEL_RATIO;
 
     this.canvas = canvas;
-    console.log(this.canvas.width);
     this.container.appendChild(canvas);
 
     const ctx = canvas.getContext("2d");
@@ -178,8 +180,10 @@ export default class Scene {
     this.RO = new ResizeObserver(
       _debounce((entries: ResizeObserverEntry[]) => {
         for (let entry of entries) {
-          this.canvas.width = entry.target.clientWidth;
-          this.canvas.height = entry.target.clientHeight;
+          this.canvas.width = entry.target.clientWidth * PIXEL_RATIO;
+          this.canvas.height = entry.target.clientHeight * PIXEL_RATIO;
+          this.canvas.style.width = entry.target.clientWidth + "px";
+          this.canvas.style.height = entry.target.clientHeight + "px";
         }
       }, 100)
     );

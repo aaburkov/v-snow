@@ -39,10 +39,9 @@ export class Flake {
     }
 
     if (this.y > -this.size) {
-      this.x += this.xs;
+      this.x += this.xs; // Math.floor(this.x + this.xs);
     }
-    this.y += this.ys;
-
+    this.y = Math.floor(this.y + this.ys);
     if (!this.image) {
       this.ctx.beginPath();
       this.ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2, false);
@@ -68,8 +67,7 @@ export class Flake {
   }
   arrange() {
     this.x = Math.random() * this.canvas.width;
-    this.y = Math.random() * -this.canvas.height;
-
+    this.y = Math.floor(Math.random() * -this.canvas.height);
     this.xs = 0.5 - Math.random();
     this.ys = (0.5 + Math.random()) * this.config.fall_speed;
     this.size = (0.5 + Math.random()) * this.config.size;

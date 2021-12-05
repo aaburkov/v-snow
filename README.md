@@ -6,17 +6,17 @@
 
 Snowfall effect plugin for Vue js
 
-> ## 👀 Demo
+## 👀 Demo
 
 You can play with params on
 [DEMO PAGE](http://gamazu.github.io/v-snow)
 
-> ## 💾 Instalation
+## 💾 Instalation
 
-This version requires Vue 2.X.
+This plugin requires Vue 2.X.
 
 ```sh
-npm install vsnow
+npm install -S vsnow
 ```
 
 ## Initialization
@@ -27,6 +27,7 @@ npm install vsnow
 import Vue from "vue";
 import VSnow from "vsnow";
 
+//Full install
 Vue.use(VSnow);
 // Or as a directive-only
 import { VSnowDirective } from "vsnow";
@@ -41,11 +42,9 @@ Vue.filter("VSnow", VSnowContainer);
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vsnow/dist/vsnow.min.js"></script>
-<script>
-  // As a plugin
-  Vue.use(vsnow.VueMaskPlugin);
-</script>
 ```
+
+Plugin will be installed automatically.
 
 ## 🚀 Usage
 
@@ -55,7 +54,7 @@ Vue.filter("VSnow", VSnowContainer);
   <!-- content -->
 </div>
 
-<!-- As a wrapper componente -->
+<!-- As a wrapper component -->
 <VSnow />
 ```
 
