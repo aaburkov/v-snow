@@ -22,7 +22,6 @@ export default class Scene {
     private checkImages;
     start(): void;
     stop(): void;
-    restart(): void;
     private updateFrame;
     private createCanvas;
     private createResizeObserver;

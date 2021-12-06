@@ -1,7 +1,6 @@
 import Vue from "vue";
 declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     imagesInputValue: string;
-    isShow: boolean;
     snowOptions: {
         density: number;
         fall_speed: number;
@@ -9,6 +8,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
         color: string;
         opacity: number;
         images: string[];
+        show: boolean;
     };
 }, {
     confirmImages(): void;
