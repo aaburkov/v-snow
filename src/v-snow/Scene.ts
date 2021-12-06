@@ -63,6 +63,7 @@ export default class Scene {
     this.config = { ...this.config, ...config };
     this.checkConfig(this.config);
     this.buildScene();
+    this.start();
   }
   private checkConfig(config: SceneConfig) {
     if (config.density > 100 || config.density < 1) {
@@ -147,8 +148,10 @@ export default class Scene {
     if (!this.initialised) {
       this.buildScene();
     }
-    if (!this.config.show) return;
-
+    if (!this.config.show) {
+      this.stop();
+      return;
+    }
     this.isRun = true;
     this.flakes.forEach(flake => {
       flake.draw();
@@ -159,10 +162,7 @@ export default class Scene {
   }
   public stop(): void {
     this.isRun = false;
-  }
-  public restart(): void {
-    this.isRun = true;
-    this.animationId = requestAnimationFrame(() => this.updateFrame());
+    this.animationId = 0;
   }
 
   private updateFrame(): void {

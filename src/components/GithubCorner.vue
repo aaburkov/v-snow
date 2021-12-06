@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://github.com/gamazu"
+    :href="url"
     target="_blank"
     class="github-corner"
     aria-label="View source on GitHub"
@@ -27,7 +27,13 @@
 </template>
 
 <script>
-export default {};
+import Vue from "vue";
+
+export default Vue.extend({
+  props: {
+    url: String
+  }
+});
 </script>
 
 <style scoped>

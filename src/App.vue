@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <GithubCorner class="github_corner" />
+    <GithubCorner
+      class="github_corner"
+      url="https://github.com/gamazu/v-snow"
+    />
     <header class="header">
       <img src="../assets/img/vue.png" class="logo" />
       <h1 class="head_title">
@@ -17,11 +20,15 @@
       :color="snowOptions.color"
       :images="snowOptions.images"
       :opacity="snowOptions.opacity"
-      :show="true"
+      :show="snowOptions.show"
       zIndex="-1"
     />
     <Features />
     <div class="controlls_wrapper">
+      <div class="controll_item">
+        <span class="controll_label">SHOW</span>
+        <Switcher v-model="snowOptions.show" />
+      </div>
       <div class="controll_item">
         <span class="controll_label">SPEED</span>
         <SpinBox :min="1" :max="5" v-model="snowOptions.fall_speed" :step="1" />
@@ -62,6 +69,7 @@ import Btn from "./components/Button.vue";
 import SpinBox from "./components/SpinBox.vue";
 import ColorPicker from "./components/ColorPicker.vue";
 import Features from "./components/Features.vue";
+import Switcher from "./components/Switcher.vue";
 export default Vue.extend({
   name: "App",
   components: {
@@ -69,15 +77,15 @@ export default Vue.extend({
     Btn,
     SpinBox,
     ColorPicker,
-    Features
+    Features,
+    Switcher
   },
   data() {
-    const images: string[] = [
+    const images: string[] = [];
+    const imagePreset = [
       "https://pngimg.com/uploads/snowflakes/snowflakes_PNG7576.png",
       "https://pngimg.com/uploads/snowflakes/snowflakes_PNG7586.png",
-      "https://pngimg.com/uploads/snowflakes/snowflakes_PNG7590.png",
-      "/test/111.png",
-      "/etst/56/sd.jpg"
+      "https://pngimg.com/uploads/snowflakes/snowflakes_PNG7590.png"
     ];
     return {
       imagesInputValue: "",
@@ -87,7 +95,8 @@ export default Vue.extend({
         size: 10,
         color: "#FFFFFF",
         opacity: 1,
-        images: images
+        images: images,
+        show: true
       }
     };
   },

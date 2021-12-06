@@ -67,7 +67,7 @@ export default Vue.extend({
     },
     show(newVal) {
       this.scene?.updateConfig({ show: newVal });
-      this.scene?.start();
+      // this.scene?.start();
     }
   }
 });

@@ -117,19 +117,19 @@ Vue.filter("VSnow", VSnowContainer);
 
 ## ⚙️ Configuration
 
-> All parameters are optional
+> All parameters are optional and have default values
 
-| Props          | Description                            | Type                 | Default |
-| -------------- | -------------------------------------- | -------------------- | ------- |
-| show           | Define play animation or not           | Boolean              | true    |
-| zIndex         | z-index of canvas                      | String               | '999'   |
-| dencity        | Count of flakes                        | Number from 0 to 100 | 50      |
-| fall_speed     | Snowflake falling speed                | Number from 1 to 5   | 2       |
-| size           | Size of snowflake                      | Number               | 10      |
-| color          | Color of snowflakes                    | String               | #FFFFFF |
-| images         | Array of images path`s | String[] | [] |
-| opacity        | Opacity of snowflakes                  | Number               | 1       |
-| containerClass | Class of component                     | String               | ''      |
+| Props          | Description                                              | Type                 | Default |
+| -------------- | -------------------------------------------------------- | -------------------- | ------- |
+| show           | Determines whether the animation should be played or not | Boolean              | true    |
+| zIndex         | z-index of canvas                                        | String               | '999'   |
+| dencity        | Count of flakes                                          | Number from 0 to 100 | 50      |
+| fall_speed     | Snowflake falling speed                                  | Number from 1 to 5   | 2       |
+| size           | Size of snowflake                                        | Number               | 10      |
+| color          | Color of snowflakes                                      | String               | #FFFFFF |
+| images         | Array of images path`s | String[] | []                   |
+| opacity        | Opacity of snowflakes                                    | Number               | 1       |
+| containerClass | Class of component                                       | String               | ''      |
 
 > **Notice**: DENSITY Calculated from the screen width using the formula - **(view_width/400) x density**
 
