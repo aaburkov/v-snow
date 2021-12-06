@@ -24,7 +24,10 @@ export default Vue.extend({
     opacity: Number,
     images: Array as PropType<string[]>,
     zIndex: String,
-    show: Boolean
+    show: {
+      type: Boolean,
+      default: true
+    }
   },
   data(): State {
     return {

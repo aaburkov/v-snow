@@ -65,6 +65,7 @@ export default class Scene {
     this.buildScene();
     this.start();
   }
+
   private checkConfig(config: SceneConfig) {
     if (config.density > 100 || config.density < 1) {
       throw new Error(
@@ -94,8 +95,11 @@ export default class Scene {
     this.initialised = true;
   }
 
-  private destroyScene(): void {
+  public destroyScene(): void {
     this.canvas?.remove();
+    this.RO.disconnect();
+    this.flakes = [];
+    this.isRun = false;
     this.initialised = false;
   }
 

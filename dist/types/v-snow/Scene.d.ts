@@ -16,7 +16,7 @@ export default class Scene {
     private checkConfig;
     private calcDensityByWidth;
     private buildScene;
-    private destroyScene;
+    destroyScene(): void;
     private generateFlakes;
     private loadImage;
     private checkImages;

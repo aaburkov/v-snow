@@ -3,12 +3,11 @@
   "description": "Snowfall effect for Vue js",
   "main": "dist/v-snow.min.js",
   "files": [
-    "dist/v-snow.js",
     "dist/v-snow.min.js",
     "dist/types/v-snow"
   ],
   "typings": "dist/types/v-snow/index.d.ts",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
   "keywords": [
     "snow",
