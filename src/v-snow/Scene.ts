@@ -7,8 +7,9 @@ const defaultSceneConfig: SceneConfig = {
   opacity: 1,
   density: 50,
   fall_speed: 2,
-  size: 10,
-  zIndex: "999"
+  size: 20,
+  zIndex: "999",
+  show: true
 };
 const PIXEL_RATIO = 2;
 
@@ -87,6 +88,7 @@ export default class Scene {
     this.createCanvas();
     this.calcDensityByWidth();
     this.createResizeObserver();
+    this.checkImages();
     this.generateFlakes();
     this.initialised = true;
   }
@@ -111,10 +113,41 @@ export default class Scene {
     }, 1500);
   }
 
+  private async loadImage(path: string): Promise<HTMLImageElement> {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = path;
+      img.onload = () => resolve(img);
+      img.onerror = () => {
+        const msg = `Can't load image ${path}. I remove it from the list of images`;
+        console.warn(msg);
+        reject(new Error(msg));
+      };
+    });
+  }
+
+  private async checkImages(): Promise<void> {
+    const images = this.config.images;
+    if (!images || images.length == 0) return;
+
+    const badImage: string[] = [];
+    for (const imgPath of images) {
+      try {
+        await this.loadImage(imgPath);
+      } catch (error) {
+        badImage.push(imgPath);
+      }
+    }
+    if (badImage.length > 0) {
+      this.config.images = images.filter(img => !badImage.includes(img));
+    }
+  }
+
   start(): void {
     if (!this.initialised) {
       this.buildScene();
     }
+    if (!this.config.show) return;
 
     this.isRun = true;
     this.flakes.forEach(flake => {

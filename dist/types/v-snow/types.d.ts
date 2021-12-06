@@ -6,6 +6,7 @@ export interface SceneConfig {
     images?: string[];
     opacity: number;
     zIndex?: string;
+    show?: boolean;
 }
 export declare enum FlakeEdgePosition {
     TOP_BOUNDARY = 0,

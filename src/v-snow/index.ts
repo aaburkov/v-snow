@@ -1,26 +1,11 @@
 import { PluginObject } from "vue";
-import { DirectiveBinding } from "vue/types/options";
-import component from "./Component.vue";
-import Scene from "./Scene";
-
-const statefulDirective = () => {
-  let scene: Scene;
-  return {
-    inserted(el: HTMLElement, binding: DirectiveBinding) {
-      scene = new Scene(el, binding.value);
-      scene.start();
-    },
-    update(el: HTMLElement, binding: DirectiveBinding) {
-      scene.updateConfig(binding.value);
-    }
-  };
-};
-export const directive = statefulDirective();
+import Component from "./Component.vue";
+import Directive from "./Directive";
 
 const plugin: PluginObject<any> = {
   install(Vue) {
-    Vue.directive("snow", directive);
-    Vue.component("VSnow", component);
+    Vue.directive("snow", Directive);
+    Vue.component("VSnow", Component);
   }
 };
 
@@ -32,6 +17,6 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export {
   plugin as default,
-  component as VSnowContainer,
-  directive as VSnowDirective
+  Component as VSnowContainer,
+  Directive as VSnowDirective
 };

@@ -18,6 +18,8 @@ export default class Scene {
     private buildScene;
     private destroyScene;
     private generateFlakes;
+    private loadImage;
+    private checkImages;
     start(): void;
     stop(): void;
     restart(): void;

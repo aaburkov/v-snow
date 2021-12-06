@@ -39,7 +39,7 @@ export class Flake {
     }
 
     if (this.y > -this.size) {
-      this.x += this.xs; // Math.floor(this.x + this.xs);
+      this.x += this.xs;
     }
     this.y = Math.floor(this.y + this.ys);
     if (!this.image) {
@@ -76,9 +76,7 @@ export class Flake {
       const imgCount = this.config.images.length;
       const img = new Image();
       img.src = this.config.images[Math.floor(Math.random() * imgCount)];
-      img.onload = () => {
-        this.image = img;
-      };
+      this.image = img;
     }
   }
 }

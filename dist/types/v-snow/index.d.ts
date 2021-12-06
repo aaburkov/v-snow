@@ -1,9 +1,5 @@
 import { PluginObject } from "vue";
-import { DirectiveBinding } from "vue/types/options";
-import component from "./Component.vue";
-export declare const directive: {
-    inserted(el: HTMLElement, binding: DirectiveBinding): void;
-    update(el: HTMLElement, binding: DirectiveBinding): void;
-};
+import Component from "./Component.vue";
+import Directive from "./Directive";
 declare const plugin: PluginObject<any>;
-export { plugin as default, component as VSnowContainer, directive as VSnowDirective };
+export { plugin as default, Component as VSnowContainer, Directive as VSnowDirective };

@@ -8,7 +8,7 @@
     "dist/types/v-snow"
   ],
   "typings": "dist/types/v-snow/index.d.ts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
   "keywords": [
     "snow",

@@ -23,7 +23,8 @@ export default Vue.extend({
     color: String,
     opacity: Number,
     images: Array as PropType<string[]>,
-    zIndex: String
+    zIndex: String,
+    show: Boolean
   },
   data(): State {
     return {
@@ -31,15 +32,18 @@ export default Vue.extend({
     };
   },
   mounted() {
-    this.scene = new Scene("#vue_snow_container", {
-      ...(this.density && { density: this.density }),
-      ...(this.fall_speed && { fall_speed: this.fall_speed }),
-      ...(this.size && { size: this.size }),
-      ...(this.color && { color: this.color }),
-      ...(this.opacity && { opacity: this.opacity }),
-      ...(this.images && { images: this.images }),
-      ...(this.zIndex && { zIndex: this.zIndex })
-    });
+    const config = {
+      ...(this.density != undefined && { density: this.density }),
+      ...(this.fall_speed != undefined && { fall_speed: this.fall_speed }),
+      ...(this.size != undefined && { size: this.size }),
+      ...(this.color != undefined && { color: this.color }),
+      ...(this.opacity != undefined && { opacity: this.opacity }),
+      ...(this.images != undefined && { images: this.images }),
+      ...(this.zIndex != undefined && { zIndex: this.zIndex }),
+      ...(this.show != undefined && { show: this.show })
+    };
+
+    this.scene = new Scene("#vue_snow_container", config);
     this.scene.start();
   },
   watch: {
@@ -60,6 +64,10 @@ export default Vue.extend({
     },
     images(newVal) {
       this.scene?.updateConfig({ images: newVal });
+    },
+    show(newVal) {
+      this.scene?.updateConfig({ show: newVal });
+      this.scene?.start();
     }
   }
 });

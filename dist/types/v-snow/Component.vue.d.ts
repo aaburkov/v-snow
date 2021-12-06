@@ -12,5 +12,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, State, unknown,
     opacity: number;
     images: string[];
     zIndex: string;
+    show: boolean;
 }>;
 export default _default;
