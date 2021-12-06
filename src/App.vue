@@ -17,10 +17,9 @@
       :color="snowOptions.color"
       :images="snowOptions.images"
       :opacity="snowOptions.opacity"
-      :show="isShow"
+      :show="true"
       zIndex="-1"
     />
-    <button @click="isShow = !isShow">TEST</button>
     <Features />
     <div class="controlls_wrapper">
       <div class="controll_item">
@@ -82,7 +81,6 @@ export default Vue.extend({
     ];
     return {
       imagesInputValue: "",
-      isShow: false,
       snowOptions: {
         density: 50,
         fall_speed: 4,

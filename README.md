@@ -121,6 +121,7 @@ Vue.filter("VSnow", VSnowContainer);
 
 | Props          | Description                            | Type                 | Default |
 | -------------- | -------------------------------------- | -------------------- | ------- |
+| show           | Define play animation or not           | Boolean              | true    |
 | zIndex         | z-index of canvas                      | String               | '999'   |
 | dencity        | Count of flakes                        | Number from 0 to 100 | 50      |
 | fall_speed     | Snowflake falling speed                | Number from 1 to 5   | 2       |
