@@ -39,7 +39,7 @@ Vue.directive("snow", VSnowDirective);
 
 // Or only as a component
 import { VSnowContainer } from "vsnow";
-Vue.filter("VSnow", VSnowContainer);
+Vue.component("VSnow", VSnowContainer);
 ```
 
 > Installation inside a component
@@ -70,12 +70,12 @@ Vue.filter("VSnow", VSnowContainer);
 
 ### UMD (Browser)
 
-> Plugin will be installed automatically.
-
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vsnow/dist/vsnow.min.js"></script>
 ```
+
+> Plugin will be installed automatically.
 
 ## 🚀 Usage
 

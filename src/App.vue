@@ -2,7 +2,7 @@
   <div id="app">
     <GithubCorner
       class="github_corner"
-      url="https://github.com/gamazu/v-snow"
+      url="https://github.com/a-boorkov/v-snow"
     />
     <header class="header">
       <img src="../assets/img/vue.png" class="logo" />
@@ -90,7 +90,7 @@ export default Vue.extend({
     return {
       imagesInputValue: "",
       snowOptions: {
-        density: 50,
+        density: 100,
         fall_speed: 4,
         size: 10,
         color: "#FFFFFF",

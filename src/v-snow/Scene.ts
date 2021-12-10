@@ -194,7 +194,7 @@ export default class Scene {
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = this.config.zIndex || "999";
+    canvas.style.zIndex = this.config.zIndex;
     canvas.style.width = this.container.clientWidth + "px";
     canvas.style.height = this.container.clientHeight + "px";
     canvas.width = this.container.clientWidth * PIXEL_RATIO;
