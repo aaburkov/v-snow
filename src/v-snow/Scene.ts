@@ -21,6 +21,7 @@ export default class Scene {
   private ctx: CanvasRenderingContext2D;
   private initialised: boolean;
   private flakes: Flake[];
+  private flakesGeneratorTimeout: ReturnType<typeof setTimeout>;
   private isRun: boolean;
   private animationId: number;
   private RO: ResizeObserver;
@@ -107,9 +108,9 @@ export default class Scene {
     // generate flakes
     this.flakes = [];
     let iteration = 0;
-
-    const interval = setInterval(() => {
-      if (iteration === 3) clearInterval(interval);
+    clearInterval(this.flakesGeneratorTimeout);
+    this.flakesGeneratorTimeout = setInterval(() => {
+      if (iteration === 3) clearInterval(this.flakesGeneratorTimeout);
       for (let i = 0; i < this.densityByWidth / 3; i++) {
         const flake = new Flake(this.canvas, this.config);
         this.flakes.push(flake);
@@ -194,7 +195,7 @@ export default class Scene {
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = this.config.zIndex;
+    canvas.style.zIndex = this.config.zIndex || "999";
     canvas.style.width = this.container.clientWidth + "px";
     canvas.style.height = this.container.clientHeight + "px";
     canvas.width = this.container.clientWidth * PIXEL_RATIO;

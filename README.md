@@ -10,7 +10,7 @@ Snowfall effect plugin for Vue js
 
 ## 👀 Demo
 
-You can watch the demo and play with the parameters on **[DEMO PAGE](http://gamazu.github.io/v-snow)**
+You can watch the demo and play with the parameters on **[DEMO PAGE](http://a-boorkov.github.io/v-snow)**
 
 ## 💾 Instalation
 
@@ -76,6 +76,27 @@ Vue.component("VSnow", VSnowContainer);
 ```
 
 > Plugin will be installed automatically.
+
+### SSR (NUXT)
+
+`plugins/VSnow.js`
+
+```js
+import VSnow from "vsnow";
+import Vue from "vue";
+
+Vue.use(VSnow);
+```
+
+`nuxt.config.js`
+
+```js
+module.exports = {
+  //...
+  plugins: [{ src: "~/plugins/VSnow", mode: "client" }]
+  //...
+};
+```
 
 ## 🚀 Usage
 

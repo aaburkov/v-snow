@@ -7,7 +7,7 @@
     "dist/types/v-snow"
   ],
   "typings": "dist/types/v-snow/index.d.ts",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Alexander Burkov <gamaz.reporter@gmail.com>",
   "keywords": [
     "snow",
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gamazu/v-snow"
+    "url": "https://github.com/a-boorkov/v-snow"
   },
   "bugs": {
-    "url": "https://github.com/gamazu/v-snow/issues"
+    "url": "https://github.com/a-boorkov/v-snow/issues"
   },
   "license": "MIT",
   "scripts": {
