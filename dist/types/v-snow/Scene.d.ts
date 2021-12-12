@@ -7,6 +7,7 @@ export default class Scene {
     private ctx;
     private initialised;
     private flakes;
+    private flakesGeneratorTimeout;
     private isRun;
     private animationId;
     private RO;
