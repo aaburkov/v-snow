@@ -10,7 +10,7 @@ Snowfall effect plugin for Vue js
 
 ## 👀 Demo
 
-You can watch the demo and play with the parameters on **[DEMO PAGE](http://a-boorkov.github.io/v-snow)**
+You can watch the demo and play with the parameters on **[DEMO PAGE](http://aaburkov.github.io/v-snow)**
 
 ## 💾 Instalation
 
