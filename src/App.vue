@@ -2,7 +2,7 @@
   <div id="app">
     <GithubCorner
       class="github_corner"
-      url="https://github.com/a-boorkov/v-snow"
+      url="https://github.com/aaburkov/v-snow"
     />
     <header class="header">
       <img src="../assets/img/vue.png" class="logo" />
